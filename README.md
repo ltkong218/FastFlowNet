@@ -43,7 +43,25 @@ Some visual examples of our FastFlowNet on several image sequences are presented
 
 
 ## Usage
-Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./model/correlation_package/</code> with command below.
+Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./model/correlation_package/</code> with command below
 <pre><code>$ python setup.py build</code>
-code>$ python setup.py install</code><pre>
+<code>$ python setup.py install</code></pre>
 
+To benchmark running speed and calculate model parameters, you can run
+<pre><code>$ python benchmark.py</code></pre>
+
+A demo for predicting optical flow given two time adjacent images, please run
+<pre><code>$ python demo.py</code></pre>
+Note that you can change the pre-trained models from different datasets for specific applications. The model <code>$./checkpoints/fastflownet_ft_mix.pth</code> is fine-tuned on mixed Sintel and KITTI, which may obtain better generalization ability.
+
+
+## License and Citation
+This software and associated documentation files (the "Software"), and the research paper (FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation) including but not limited to the figures, and tables (the "Paper") are provided for academic research purposes only and without any warranty. Any commercial use requires my consent. When using any parts of the Software or the Paper in your work, please cite the following paper:
+<pre><code>
+    @inproceedings{Kong:2021:FastFlowNet, 
+    title = {FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation}, 
+    author = {Lingtong Kong and Chunhua Shen and Jie Yang}, 
+    booktitle = {2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
+    year = {2021}
+    }
+</code></pre>
