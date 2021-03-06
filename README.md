@@ -41,3 +41,9 @@ Some visual examples of our FastFlowNet on several image sequences are presented
   <img src=./data/img_050_flow.png width=270 />
 </p>
 
+
+## Usage
+Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./model/correlation_package/</code> with command below.
+<pre><code>$ python setup.py build</code>
+code>$ python setup.py install</code><pre>
+
