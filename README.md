@@ -20,5 +20,4 @@ Some visual examples on several image sequences.
 
 ｜｜｜｜
 ｜--｜--｜--｜
-
 ｜<img src=./data/frame_0006.png>｜<img src=./data/frame_0007.png>｜<img src=./data/frame_0006_flow.png>｜
