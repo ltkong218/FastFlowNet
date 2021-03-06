@@ -30,14 +30,14 @@ Experiments on both synthetic [Sintel](http://sintel.is.tue.mpg.de/) and real-wo
 Some visual examples of our FastFlowNet on several image sequences are presented as follows.
 
 <p float="left">
-  <img src=./data/frame_0006.png width=320 />
-  <img src=./data/frame_0007.png width=320 />
-  <img src=./data/frame_0006_flow.png width=320 />  
-  <img src=./data/000038_10.png width=320 />
-  <img src=./data/000038_11.png width=320 />
-  <img src=./data/000038_10_flow.png width=320 />  
-  <img src=./data/img_050.jpg width=320 />
-  <img src=./data/img_051.jpg width=320 />
-  <img src=./data/img_050_flow.png width=320 />
+  <img src=./data/frame_0006.png width=300 />
+  <img src=./data/frame_0007.png width=300 />
+  <img src=./data/frame_0006_flow.png width=300 />  
+  <img src=./data/000038_10.png width=300 />
+  <img src=./data/000038_11.png width=300 />
+  <img src=./data/000038_10_flow.png width=300 />  
+  <img src=./data/img_050.jpg width=300 />
+  <img src=./data/img_051.jpg width=300 />
+  <img src=./data/img_050_flow.png width=300 />
 </p>
 
