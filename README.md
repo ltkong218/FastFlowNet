@@ -19,8 +19,5 @@ Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlo
 Some visual examples on several image sequences.
 
 ![](./data/frame_0006.png)![](./data/frame_0007.png)![](./data/frame_0006_flow.png)
-
 ![](./data/000038_10.png)![](./data/000038_11.png)![](./data/000038_10_flow.png)
-
 ![](./data/img_050.jpg)![](./data/img_051.jpg)![](./data/img_050_flow.png)
-
