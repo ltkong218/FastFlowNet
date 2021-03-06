@@ -32,3 +32,10 @@ Some visual examples on several image sequences.
   <img src=./data/img_050_flow.png width=330 />
 </p>
 
+|             | Sintel Clean Test (AEPE) | KITTI 2015 Test (Fl-all) | Params (M) | FLOPs (G) | Time (ms) 1080Ti | Time (ms) TX2 |
+|:-----------:|:------------------------:|:------------------------:|:----------:|:---------:|:----------------:|:-------------:|
+|   FlowNet2  |           4.16           |          11.48%          |   162.52   |  24836.4  |        116       |      1547     |
+|    SPyNet   |           6.64           |          35.07%          |    1.20    |   149.8   |        50        |      918      |
+|   PWC-Net   |           4.39           |           9.60%          |    8.75    |    90.8   |        34        |      485      |
+| LiteFlowNet |           4.54           |           9.38%          |    5.37    |   163.5   |        55        |      907      |
+| FastFlowNet |           4.89           |          11.22%          |    1.37    |    12.2   |        11        |      176      |
