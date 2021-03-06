@@ -52,7 +52,7 @@ To benchmark running speed and calculate model parameters, you can run
 
 A demo for predicting optical flow given two time adjacent images, please run
 <pre><code>$ python demo.py</code></pre>
-Note that you can change the pre-trained models from different datasets for specific applications. The model <code>$./checkpoints/fastflownet_ft_mix.pth</code> is fine-tuned on mixed Sintel and KITTI, which may obtain better generalization ability.
+Note that you can change the pre-trained models from different datasets for specific applications. The model <code>./checkpoints/fastflownet_ft_mix.pth</code> is fine-tuned on mixed Sintel and KITTI, which may obtain better generalization ability.
 
 
 ## License and Citation
