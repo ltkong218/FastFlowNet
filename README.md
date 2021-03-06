@@ -20,16 +20,12 @@ Some visual examples on several image sequences.
 
 <p float="left">
   <img src=./data/frame_0006.png width=330 />
-  <img src=./data/frame_0007.png width=330 /> 
-  <img src=./data/frame_0006_flow.png width=330 />
-</p>
-<p float="left">
+  <img src=./data/frame_0007.png width=330 />
+  <img src=./data/frame_0006_flow.png width=330 />  
   <img src=./data/000038_10.png width=330 />
-  <img src=./data/000038_11.png width=330 /> 
-  <img src=./data/000038_10_flow.png width=330 />
-</p>
-<p float="left">
+  <img src=./data/000038_11.png width=330 />
+  <img src=./data/000038_10_flow.png width=330 />  
   <img src=./data/img_050.jpg width=330 />
-  <img src=./data/img_051.jpg width=330 /> 
+  <img src=./data/img_051.jpg width=330 />
   <img src=./data/img_050_flow.png width=330 />
 </p>
