@@ -18,7 +18,7 @@ Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlo
 
 Some visual examples on several image sequences.
 
-<center>
+<left>
 <figure>
  <img src=./data/frame_0006.png width=330 />
   <img src=./data/frame_0007.png width=330 />
@@ -30,6 +30,6 @@ Some visual examples on several image sequences.
   <img src=./data/img_051.jpg width=330 />
   <img src=./data/img_050_flow.png width=330 />
 </figure>
-</center>
+</left>
 
 
