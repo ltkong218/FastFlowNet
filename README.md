@@ -58,8 +58,8 @@ Note that you can change the pre-trained models from different datasets for spec
 ## License and Citation
 This software and associated documentation files (the "Software"), and the research paper (FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation) including but not limited to the figures, and tables (the "Paper") are provided for academic research purposes only and without any warranty. Any commercial use requires my consent. When using any parts of the Software or the Paper in your work, please cite the following paper:
 <pre><code>@inproceedings{Kong:2021:FastFlowNet, 
-title = {FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation}, 
-author = {Lingtong Kong and Chunhua Shen and Jie Yang}, 
-booktitle = {2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
-year = {2021}
+ title = {FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation}, 
+ author = {Lingtong Kong and Chunhua Shen and Jie Yang}, 
+ booktitle = {2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
+ year = {2021}
 }</code></pre>
