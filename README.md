@@ -11,7 +11,7 @@ Dense optical flow estimation plays a key role in many robotic vision tasks. It 
 
 
 ## NVIDIA Jetson TX2
-Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlowNet can approximate real-time inference on the Jetson TX2 development board, which represents the first real-time solution for accurate optical flow on embedded devices. For training, please refer to [PWC-Net](https://github.com/NVlabs/PWC-Net) and [IRR-PWC](https://github.com/visinf/irr), since we use the same datasets, augmentation methods and loss functions. Currently, only pytorch implementation and pre-trained models are available. A demo video for real-time inference on embedded device is shown below, note that there is time delay between real motion and visualized optical flow.
+Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlowNet can approximate real-time inference on the Jetson TX2 development board, which represents the first real-time solution for accurate optical flow on embedded devices. For training, please refer to [PWC-Net](https://github.com/NVlabs/PWC-Net) and [IRR-PWC](https://github.com/visinf/irr), since we use the same datasets, augmentation methods and loss functions. Currently, only pytorch implementation and pre-trained models are available. A demo video for real-time inference on embedded device is shown below, note that there is time delay between real motion and visualized optical flow. [YouTube Video Presentation](https://www.youtube.com/watch?v=dSkI4YisL9o).
 
 ![](./data/tx2_demo.gif)
 
