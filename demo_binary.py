@@ -13,6 +13,7 @@ div_size = 64
 width = 800
 height = 600
 
+# path parameters 
 username = 'user16'
 root_path = '/home/kenchang/anaconda3/envs/care-plus/care-plus-model-pipeline-activesample_dev'
 seg_path = os.path.join(root_path, 'seg', username + '_seg.png')
@@ -71,15 +72,11 @@ def inference():
     model = FastFlowNet().cuda().eval()
     model.load_state_dict(torch.load('./checkpoints/fastflownet_ft_mix.pth'))
     filename = '2021-12-08_00-53-16'
-    #output_dir = './data/user16/2021-11-09_00-52-56/'
     output_dir = './data/user16/' + filename + '/'
     os.mkdir(output_dir)
-    #cap = cv2.VideoCapture('./data/user16/2021-11-09_00-52-56.mp4')
     cap = cv2.VideoCapture('./data/user16/' + filename + '.mp4')
     print(int(cap.get(cv2.CAP_PROP_FRAME_COUNT)))
     frame_index = 0
-    #width = 800
-    #height = 600
 
     while(cap.isOpened()):
             # Read video image
