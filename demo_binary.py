@@ -134,15 +134,6 @@ def inference():
                     flow[:, 1, :, :] *= scale_h
 
                 flow = flow[0].cpu().permute(1, 2, 0).numpy()
-                """
-                #print('flow', flow[0].size)
-                mag, ang = cv2.cartToPolar(flow[..., 0], flow[..., 1])
-                hsv[...,0] = ang * 180 / np.pi / 2
-                hsv[...,2] = cv2.normalize(mag, None, 0, 255, cv2.NORM_MINMAX)
-                rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
-                mapf = np.sum(rgb, axis=2)
-                mapf = np.array(np.where(mapf > convert_opt_to_binary_th, 255, 0), dtype=np.uint8)
-                """
                 flow_color = flow_to_color(flow, convert_to_bgr=False)
                 flow_color = cv2.resize(flow_color, (400, 300))
                 flow_color = flow_color * segmask
@@ -150,14 +141,9 @@ def inference():
                 flow_color = np.array(np.where(flow_color > 200, 255, 0), dtype=np.uint8)
                 flow_color = np.array(np.where(flow_color > 200, 255, 0), dtype=np.uint8)
                 cv2.imwrite(output_dir + str(frame_index)+ '.png', flow_color)
-
-                #flow_color = cv2.resize(flow_color, (800, 600))
-                #cv2.imwrite(output_dir + str(frame_index)+ '.png', flow_color)
                 
             frame_index += 1
             
-                
-
         else:
             print('None')
             cap.release()
