@@ -54,6 +54,36 @@ A demo for predicting optical flow given two time adjacent images, please run
 <pre><code>$ python demo.py</code></pre>
 Note that you can change the pre-trained models from different datasets for specific applications. The model <code>./checkpoints/fastflownet_ft_mix.pth</code> is fine-tuned on mixed Sintel and KITTI, which may obtain better generalization ability.
 
+## Support TensorRT
+
+Support TensorRT with below configuration:
+
+card: nvidia RTX3060Ti\
+driver: 470.103.01\
+cuda: 11.3\
+tensorrt: 8.0.1GA\
+pytorch: 1.10.2+cu113
+
+To inference on Tensorrt: 
+
+First clone tensorrt oss and copy <code><Proj_ROOT>/tensorrt_workspace/TensorRT</code> to tensorrt oss and build.
+<pre><code>$ cp -rf ./tensorrt_workspace/TensorRT/* ${TensoRT_OSS_ROOT}/ </code>
+<code>$ cd ${TensoRT_OSS_ROOT} && mkdir build && cd build</code>
+<code>$ cmake .. -DTRT_LIB_DIR=$TRT_LIBPATH -DTRT_OUT_DIR=`pwd`/out -DCUDA_VERSION=11.3</code>
+<code>$ make -j</code>
+</pre>
+
+Second build correlation module for pytorch:
+<pre><code>$ cd ./tensorrt_workspace/correlation_pytorch/</code>
+<code>$ python setup.py build</code></pre>
+
+Then copy the root of tensorrt plugin library libnvinfer_plugin.so into <code>./tensorrt_workspace/tensorrt_plugin_path</code>
+
+and run <code>python ./tensorrt_workspace/fastflownet.py </code> to build engine\
+run <code>python ./tensorrt_workspace/infr.py </code> to inference with tensorrt.
+
+with fp16, fastflownet can run at 220FPS with input size of 512x512 ,and results:
+<img src=./tensorrt_workspace/img/screenshot.png width=270 />
 
 ## License and Citation
 This software and associated documentation files (the "Software"), and the research paper (FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation) including but not limited to the figures, and tables (the "Paper") are provided for academic research purposes only and without any warranty. Any commercial use requires my consent. When using any parts of the Software or the Paper in your work, please cite the following paper:
