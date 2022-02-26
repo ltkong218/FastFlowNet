@@ -2,7 +2,8 @@ import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .correlation_package.correlation import Correlation
+from spatial_correlation_sampler import SpatialCorrelationSampler, spatial_correlation_sample
+#from .correlation_package.correlation import Correlation
 
 
 def convrelu(in_channels, out_channels, kernel_size=3, stride=1, padding=1, dilation=1, groups=1, bias=True):
@@ -64,7 +65,7 @@ class FastFlowNet(nn.Module):
         self.pconv3_2 = convrelu(64, 64, 3, 1)
         self.pconv3_3 = convrelu(64, 64, 3, 1)
 
-        self.corr = Correlation(pad_size=4, kernel_size=1, max_displacement=4, stride1=1, stride2=1, corr_multiply=1)
+        self.corr = SpatialCorrelationSampler(1, 9, 1, 0, 1)
         self.index = torch.tensor([0, 2, 4, 6, 8, 
                 10, 12, 14, 16, 
                 18, 20, 21, 22, 23, 24, 26, 
@@ -131,35 +132,50 @@ class FastFlowNet(nn.Module):
         f26 = F.avg_pool2d(f25, kernel_size=(2, 2), stride=(2, 2))
 
         flow7_up = torch.zeros(f16.size(0), 2, f16.size(2), f16.size(3)).to(f15)
-        cv6 = torch.index_select(self.corr(f16, f26), dim=1, index=self.index.to(f16).long())
+        f16_f26_corr_output = self.corr(f16, f26)
+        b, c, h, w = f16.shape
+        f16_f26_corr_output = f16_f26_corr_output.view(b, -1, h, w) / c
+        cv6 = torch.index_select(f16_f26_corr_output, dim=1, index=self.index.to(f16).long())
         r16 = self.rconv6(f16)
         cat6 = torch.cat([cv6, r16, flow7_up], 1)
         flow6 = self.decoder6(cat6)
 
         flow6_up = self.up6(flow6)
         f25_w = self.warp(f25, flow6_up*0.625)
-        cv5 = torch.index_select(self.corr(f15, f25_w), dim=1, index=self.index.to(f15).long())
+        f15_f25w_corr_output = self.corr(f15, f25_w)
+        b, c, h, w = f15.shape
+        f15_f25w_corr_output = f15_f25w_corr_output.view(b, -1, h, w) / c
+        cv5 = torch.index_select(f15_f25w_corr_output, dim=1, index=self.index.to(f15).long())
         r15 = self.rconv5(f15)
         cat5 = torch.cat([cv5, r15, flow6_up], 1)
         flow5 = self.decoder5(cat5) + flow6_up
 
         flow5_up = self.up5(flow5)
         f24_w = self.warp(f24, flow5_up*1.25)
-        cv4 = torch.index_select(self.corr(f14, f24_w), dim=1, index=self.index.to(f14).long())
+        f14_f24w_corr_output = self.corr(f14, f24_w)
+        b, c, h, w = f14.shape
+        f14_f24w_corr_output = f14_f24w_corr_output.view(b, -1, h, w) / c
+        cv4 = torch.index_select(f14_f24w_corr_output, dim=1, index=self.index.to(f14).long())
         r14 = self.rconv4(f14)
         cat4 = torch.cat([cv4, r14, flow5_up], 1)
         flow4 = self.decoder4(cat4) + flow5_up
 
         flow4_up = self.up4(flow4)
         f23_w = self.warp(f23, flow4_up*2.5)
-        cv3 = torch.index_select(self.corr(f13, f23_w), dim=1, index=self.index.to(f13).long())
+        f13_f23w_corr_output = self.corr(f13, f23_w)
+        b, c, h, w = f13.shape
+        f13_f23w_corr_output = f13_f23w_corr_output.view(b, -1, h, w) / c
+        cv3 = torch.index_select(f13_f23w_corr_output, dim=1, index=self.index.to(f13).long())
         r13 = self.rconv3(f13)
         cat3 = torch.cat([cv3, r13, flow4_up], 1)
         flow3 = self.decoder3(cat3) + flow4_up
 
         flow3_up = self.up3(flow3)
         f22_w = self.warp(f22, flow3_up*5.0)
-        cv2 = torch.index_select(self.corr(f12, f22_w), dim=1, index=self.index.to(f12).long())
+        f12_f22w_corr_output = self.corr(f12, f22_w)
+        b, c, h, w = f12.shape
+        f12_f22w_corr_output = f12_f22w_corr_output.view(b, -1, h, w) / c
+        cv2 = torch.index_select(f12_f22w_corr_output , dim=1, index=self.index.to(f12).long())
         r12 = self.rconv2(f12)
         cat2 = torch.cat([cv2, r12, flow3_up], 1)
         flow2 = self.decoder2(cat2) + flow3_up
