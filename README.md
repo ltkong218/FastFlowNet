@@ -11,7 +11,7 @@ Dense optical flow estimation plays a key role in many robotic vision tasks. It 
 
 
 ## NVIDIA Jetson TX2
-Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlowNet can approximate real-time inference on the Jetson TX2 development board, which represents the first real-time solution for accurate optical flow on embedded devices. For training, please refer to [PWC-Net](https://github.com/NVlabs/PWC-Net) and [IRR-PWC](https://github.com/visinf/irr), since we use the same datasets, augmentation methods and loss functions. Currently, only pytorch implementation and pre-trained models are available. A demo video for real-time inference on embedded device is shown below, note that there is time delay between real motion and visualized optical flow. [YouTube Video Presentation](https://www.youtube.com/watch?v=dSkI4YisL9o).
+Optimized by [TensorRT](https://developer.nvidia.com/tensorrt), proposed FastFlowNet can approximate real-time inference on the Jetson TX2 development board, which represents the first real-time solution for accurate optical flow on embedded devices. For training, please refer to [PWC-Net](https://github.com/NVlabs/PWC-Net) and [IRR-PWC](https://github.com/visinf/irr), since we use the same datasets, augmentation methods and loss functions. A demo video for real-time inference on embedded device is shown below, note that there is time delay between real motion and visualized optical flow. [YouTube Video Presentation](https://www.youtube.com/watch?v=dSkI4YisL9o).
 
 ![](./data/tx2_demo.gif)
 
@@ -43,7 +43,7 @@ Some visual examples of our FastFlowNet on several image sequences are presented
 
 
 ## Usage
-Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./models/correlation_package/</code> with command below
+Our original experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./models/correlation_package/</code> with command below
 <pre><code>$ python setup.py build</code>
 <code>$ python setup.py install</code></pre>
 
