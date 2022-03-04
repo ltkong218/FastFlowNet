@@ -85,7 +85,7 @@ Then copy the root of tensorrt plugin library libnvinfer_plugin.so into <code>./
 and run <code>python ./tensorrt_workspace/fastflownet.py </code> to build engine\
 run <code>python ./tensorrt_workspace/infr.py </code> to inference with tensorrt.
 
-with fp16, fastflownet can run at 220FPS with input size of 512x512 ,and results:
+with fp16, FastFlowNet can run at 220FPS with input size of 512x512 ,and results:
 <img src=./tensorrt_workspace/img/screenshot.png width=540 />
 
 ## License and Citation
