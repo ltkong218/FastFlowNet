@@ -43,9 +43,12 @@ Some visual examples of our FastFlowNet on several image sequences are presented
 
 
 ## Usage
-Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./model/correlation_package/</code> with command below
+Our experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4.1. First, you should build and install the Correlation module in <code>./models/correlation_package/</code> with command below
 <pre><code>$ python setup.py build</code>
 <code>$ python setup.py install</code></pre>
+
+### New
+<code>./models/FastFlowNet_.py</code> is the equivalent version of <code>./models/FastFlowNet.py</code> that supports CUDA 10.0/10.1 and PyTorch 1.2.0/1.3.0. Higher CUDA and PyTorch versions can be supported if [<code>Pytorch-Correlation-extension</code>](https://github.com/ClementPinard/Pytorch-Correlation-extension) is installed successfully.
 
 To benchmark running speed and calculate model parameters, you can run
 <pre><code>$ python benchmark.py</code></pre>
