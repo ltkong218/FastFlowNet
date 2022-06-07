@@ -88,11 +88,11 @@ run <code>python ./tensorrt_workspace/infr.py </code> to inference with tensorrt
 with fp16, FastFlowNet can run at 220FPS with input size of 512x512 ,and results:
 <img src=./tensorrt_workspace/img/screenshot.png width=540 />
 
-## License and Citation
-This software and associated documentation files (the "Software"), and the research paper (FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation) including but not limited to the figures, and tables (the "Paper") are provided for academic research purposes only and without any warranty. Any commercial use requires my consent. When using any parts of the Software or the Paper in your work, please cite the following paper:
-<pre><code>@inproceedings{Kong:2021:FastFlowNet, 
- title = {FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation}, 
- author = {Lingtong Kong and Chunhua Shen and Jie Yang}, 
- booktitle = {2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
- year = {2021}
+## Citation
+When using any parts of the Software or the Paper in your work, please cite the following paper:
+<pre><code>@InProceedings{Kong_2021_ICRA, 
+  author={Kong, Lingtong and Shen, Chunhua and Yang, Jie}, 
+  booktitle={2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={FastFlowNet: A Lightweight Network for Fast Optical Flow Estimation}, 
+  year={2021}
 }</code></pre>
