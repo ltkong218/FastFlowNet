@@ -89,6 +89,8 @@ With fp16, FastFlowNet can run at 220FPS with input size of 512x512, and results
 ### TensorRT Docker Environment
 To facilitate the actual deployment of FastFlowNet with TensorRT, here is a Docker TensorRT environment: [https://hub.docker.com/r/pullmyleg/tensorrt8_cuda11.3_pytorch1.10.2_fastflownet](https://hub.docker.com/r/pullmyleg/tensorrt8_cuda11.3_pytorch1.10.2_fastflownet).
 
+### Unsupervised Pre-trained FastFlowNet on Sintel and KITTI
+[MDFlow: Unsupervised Optical Flow Learning by Reliable Mutual Knowledge Distillation](https://github.com/ltkong218/MDFlow)
 
 ## Citation
 When using any parts of the Software or the Paper in your work, please cite the following paper:
