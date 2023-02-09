@@ -47,8 +47,10 @@ Our original experiment environment is with CUDA 9.0, Python 3.6 and PyTorch 0.4
 <pre><code>$ python setup.py build</code>
 <code>$ python setup.py install</code></pre>
 
-### New
-<code>./models/FastFlowNet_.py</code> is the equivalent version of <code>./models/FastFlowNet.py</code> that supports CUDA 10.0/10.1 and PyTorch 1.2.0/1.3.0. Higher CUDA and PyTorch versions can be supported if [<code>Pytorch-Correlation-extension</code>](https://github.com/ClementPinard/Pytorch-Correlation-extension) is installed successfully.
+## Higher CUDA and PyTorch versions Support
+<code>./models/FastFlowNet_v1.py</code> is the equivalent version of <code>./models/FastFlowNet.py</code> that supports CUDA 10.x and PyTorch 1.2.0/1.3.0. For using <code>./models/FastFlowNet_v1.py</code>, you should run <code>pip install spatial-correlation-sampler==0.2.0</code>.
+
+<code>./models/FastFlowNet_v2.py</code> is the equivalent version of <code>./models/FastFlowNet.py</code> that supports CUDA 10.x/11.x and PyTorch 1.6.x/1.7.x/1.8.x/1.9.x/1.10.x/1.11.x/1.12.x. For using <code>./models/FastFlowNet_v2.py</code>, you should run <code>pip install spatial-correlation-sampler==0.4.0</code>.
 
 To benchmark running speed and calculate model parameters, you can run
 <pre><code>$ python benchmark.py</code></pre>
